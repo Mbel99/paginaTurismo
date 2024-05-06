@@ -19,6 +19,7 @@ body{
     background-color: var(--bg-color);
 }
 
+/* Estilos para la barra de navegación */
 .header{
     background-color:#219ebc;
     display: flex;
@@ -55,5 +56,53 @@ body{
 }
 
 .header .nav-links a:hover{
-    color: #fb8500;
+    color: #000;
 }
+
+/* Estilos para el slider con imágenes */
+.texto{
+    position: absolute;
+    text-align: center;
+    padding: 0 300px;
+    top: 250px;
+    color: #fff;
+}
+.slider-frame{
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 0;
+    overflow: hidden;
+}
+
+.slider-frame ul{
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 16s infinite ease-in-out;
+}
+
+.slider-frame li{
+    list-style: none;
+    width: 100%;
+}
+
+.slider-frame img{
+    max-width: 100%;
+}
+
+@keyframes slide{
+    0% {margin-left:0%;}
+    20% {margin-left:0%;}
+
+    25% {margin-left:-100%;}
+    45% {margin-left:-100%;}
+
+    50% {margin-left:-200%;}
+    70% {margin-left:-200%;}
+
+    75% {margin-left:-300%;}
+    95% {margin-left:-300%;}
+}
+

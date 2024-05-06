@@ -29,37 +29,40 @@ body{
     padding: 5px 10%;
 }
 
-.header .logo img{
+.logo img{
     height: 60px;
 }
 
-.header .nav-links{
+.nav-links{
     list-style: none;
     text-align: center; 
 }
 
-.header .nav-links li{
+.nav-links li{
     display:inline-block;
     padding: 0 60px;
     font-size: 18px;
 }
 
-.header .nav-links li:hover{
+.nav-links li:hover{
     transform: scale(1.1);
 }
 
-.header .nav-links a{
+.nav-links a{
     font-size: 600;
     color: #fff;
     display: block;
     text-decoration: none;
 }
 
-.header .nav-links a:hover{
+.nav-links a:hover{
     color: #000;
 }
 
 /* Estilos para el slider con imágenes */
+.titulo{
+    color: #000;
+}
 .texto{
     position: absolute;
     text-align: center;

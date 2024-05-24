@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon/mountain_11187542.ico" type="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d225780009.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Hospedaje en SMA</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"> 
+            <img src="img/mountain_11187542.png" alt="Logo de la página">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./excurciones.html">¿Qué visitar?</a></li>
+                <li><a href="./alojamiento.html">¿Dónde alojarse?</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="title-container">
+            <img src="./img/ciudad-2.jpg" alt="fotografía de la ciudad" class="section-banner">
+            <div class="bottomleft">
+                <h1>Alojamientos</h1>                
+            </div>
+        </div>
+        <div class="alojamiento-container">
+            <ul id="alojamientos">
+                <li class="list active">Todos</li>
+                <li class="list" data-btn="1">Hoteles</li>
+                <li class="list" data-btn="2">Hosterías</li>
+                <li class="list" data-btn="3">Cabañas</li>
+                <li class="list" data-btn="4">Apart Hoteles</li>
+                <li class="list" data-btn="5">Campings</li>
+            </ul>
+            <div class="grid-container">
+                <div class="grid-item" data-item="1">
+                    <div><img src="./img/alojamiento-item-1.jpg" alt="Imagen del Hotel Patagonia Plaza"></div>
+                    <div class="datos-alojamiento">
+                        <h3><a href="./https://hotelpatagoniaplaza.com.ar/">Hotel Patagonia Plaza</a></h3>
+                        <ul>
+                            <li><i class="fa-solid fa-location-dot"></i> San Martín 502</li>
+                            <li><i class="fa-solid fa-phone"></i>  +54 2972 422280</li>
+                            <li><i class="fa-solid fa-envelope"></i> reservas@hotelpatagoniaplaza.com.ar</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid-item" data-item="2">
+                    <div><img src="./img/alojamiento-item-2.jpg" alt="Imagen Hotel Intermonti"></div>
+                    <div class="datos-alojamiento">
+                        <h3><a href="https://www.laswalkirias.com/es/">Hostería Las Walkírias</a></h3>
+                        <ul>
+                            <li><i class="fa-solid fa-location-dot"></i> Villegas 815</li>
+                            <li><i class="fa-solid fa-phone"></i> +54 2972 428308</li>
+                            <li><i class="fa-solid fa-envelope"></i> info@laswalkirias.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid-item" data-item="4">
+                    <div><img src="./img/alojamiento-item-3.jpg" alt="Imagen Apart Hotel La Bora"></div>
+                    <div class="datos-alojamiento">
+                        <h3><a href="https://www.aparthotellabora.com.ar/">Apart Hotel La Bora</a></h3>
+                        <ul>
+                            <li><i class="fa-solid fa-location-dot"></i> Ramayón 840</li>
+                            <li><i class="fa-solid fa-phone"></i> +54 2972 427930</li>
+                            <li><i class="fa-solid fa-envelope"></i> reservas@aparthotellabora.com.ar</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid-item" data-item="3">
+                    <div><img src="./img/alojamiento-item-4.jpg" alt="Imagen Cabañas Antilhue"></div>
+                    <div class="datos-alojamiento">
+                        <h3><a href="https://www.antilhue.com.ar/">Cabañas Antilhue</a></h3>
+                        <ul>
+                            <li><i class="fa-solid fa-location-dot"></i> Yepún 89</li>
+                            <li><i class="fa-solid fa-phone"></i> +54 9 2972 539464 </li>
+                            <li><i class="fa-solid fa-envelope"></i> reservas@antilhue.com.ar</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid-item" data-item="1">
+                    <div><img src="./img/alojamiento-item-5.jpg" alt="Imagen Hotel Antiguos"></div>
+                    <div class="datos-alojamiento">
+                        <h3><a href="https://www.hotelantiguos.com.ar/es/">Hotel Antiguos</a></h3>
+                        <ul>
+                            <li><i class="fa-solid fa-location-dot"></i> Coronel Diaz 751</li>
+                            <li><i class="fa-solid fa-phone"></i> +54 2972 411876 </li>
+                            <li><i class="fa-solid fa-envelope"></i> consultas@hotelantiguos.com.ar</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid-item" data-item="5">
+                    <div><img src="./img/alojamiento-item-6.jpg" alt="Imagen Camping Quila Quina"></div>
+                    <div class="datos-alojamiento">
+                        <h3><a href="https://www.campingquilaquina.com.ar/">Camping Quila Quina</a></h3>
+                        <ul>
+                            <li><i class="fa-solid fa-location-dot"></i> Ruta 108 (Lago Lacar)</li>
+                            <li><i class="fa-solid fa-phone"></i> +54 9 297 250-5229</li>
+                            <li><i class="fa-solid fa-envelope"></i> campingquilaquinasma@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid-item" data-item="4">
+                    <div><img src="./img/alojamiento-item-7.jpg" alt="Imagen Apart Hotel El Viejo Nogal"></div>
+                    <div class="datos-alojamiento">
+                        <h3><a href="https://www.elviejonogal.com.ar/">Apart Hotel El Viejo Nogal</a></h3>
+                        <ul>
+                            <li><i class="fa-solid fa-location-dot"></i> Rivadavia 445</li>
+                            <li><i class="fa-solid fa-phone"></i> +54 9 297 243-0611</li>
+                            <li><i class="fa-solid fa-envelope"></i> elviejonogalsmandes@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="redes">
+            <p class="footer-title"><i class="fa-solid fa-angle-right fa-fw"></i>Seguinos en nuestras redes:</p>
+            <ul class="redes-icons">
+                <li class="sns facebook"><a href="#" class="fa-brands fa-facebook fa-fw"></a></li>
+                <li class="sns instagram"><a href="#" class="fa-brands fa-twitter fa-fw"></a></li>
+                <li class="sns twitter-x"><a href="#" class="fa-brands fa-instagram fa-fw"></a></li>
+                <li class="sns tiktok"><a href="#" class="fa-brands fa-tiktok fa-fw"></a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="footer-title"><i class="fa-solid fa-angle-right fa-fw"></i>Sitios de interés:</p>
+            <div class="links-sitios">
+                <p><a href="https://www.sanmartindelosandes.gov.ar/" target="_blank">Municipalidad de San Martín de los Andes</a></p>
+                <p><a href="http://neuquentur.gob.ar/es/" target="_blank">Neuquen Turismo</a></p>
+                <p><a href="http://www.pnlanin.com.ar/Trekking.php" target="_blank">Parque Nacional Lanin</a></p>
+                <p><a href="https://www.chapelco.com/index.php" target="_blank">Cerro Chapelco</a></p>
+            </div>
+        </div>
+        <div> 
+            <p class="footer-title"><i class="fa-solid fa-angle-right fa-fw"></i>Esta web es parte de un proyecto de</p>
+            <a href="https://agenciadeaprendizaje.bue.edu.ar/codo-a-codo/" target="_blank"><img src="./img/logo-CaC-removebg.png" alt="Codo a Codo" width="100px"></a>
+        </div>
+    </footer>
+    <!-- JS -->
+    <script type="text/javascript" src="./js/script-filter.js" ></script>
+</body>
+</html>

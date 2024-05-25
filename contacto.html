@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon/mountain_11187542.ico" type="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d225780009.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Contactanos SMA</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"> 
+            <img src="img/mountain_11187542.png" alt="Logo de la página">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./excurciones.html">¿Qué visitar?</a></li>
+                <li><a href="./alojamiento.html">¿Dónde alojarse?</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="title-container">
+            <img src="./img/sma-img.png" alt="fotografía de la ciudad" class="section-banner">
+            <div class="bottomleft">
+                <h1>Contacto</h1>                
+            </div>
+        </div>
+        <h2>Contactanos si necesitas ayuda o información adicional</h2>
+        <div id="form-container">
+            <form action="" name="contacto">
+                <div class="form-container-flex">
+                    <div class="col left-form">
+                        <!-- Nombre -->
+                        <label for="name" class="label">Nombre</label>
+                        <input type="text" name="name" id="name" class="form-input" minlength="2" required>
+                        <p class="input-error">El nombre solo puede contener letras y espacios.</p>
+
+                        <!-- Apellido  -->
+                        <label for="surname" class="label">Apellido</label>
+                        <input type="text" name="surname" id="surname" class="form-input" minlength="2" required>
+                        <p class="input-error">El apellido solo puede contener letras y espacios.</p>
+
+                        <!-- Email -->
+                        <label for="email" class="label">Correo Electrónico</label>
+                        <input type="email" name="email" id="email" placeholder="Correo@correo.com" required class="form-input">
+                        <p class="input-error">El formato del correo no es correcto. El correo solo puede contener letras, números, puntos, guiones y guión bajo. </p>
+
+                        <!-- Confirmar email -->
+                        <label for="emailcheck" class="label">Confirmar correo Electrónico</label>
+                        <input type="email" name="emailcheck" id="emailcheck" placeholder="Correo@correo.com" required class="form-input">
+                        <p class="input-error">Ambas direcciones de correo electrónico deben ser iguales.</p>
+
+                        <!-- Select país -->
+                        <label for="country" class="label">País</label>
+                        <select name="country" id="country" class="form-input" required>
+                            <option value="1">Argentina</option>
+                            <option value="2">Chile</option>
+                            <option value="3">Uruguay</option>
+                            <option value="4">Brasil</option>
+                            <option value="5">Otro</option>
+                        </select>
+
+                        <!-- Telefono -->
+                        <label for="phone" class="label">Telefono</label>
+                        <input type="tel" name="phone" id="phone" placeholder="1122334455" class="form-input" minlength="10" required>
+                        <p class="input-error">El telefono solo puede contener números y un máximo de 14 dígitos</p>    
+
+                        <!-- Suscripción a novedades Input:radio -->
+                        <p class="label">¿Querés seguir recibiendo novedades por email?</p>
+                        <div id="radio-container">
+                            <div>
+                                <input type="radio" name="suscription" id="suscription-yes" value="yes" checked>
+                                <label for="suscription-yes">Sí</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="suscription" id="suscription-no" value="no">
+                                <label for="suscription-no">No</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col right-form">
+                        <!-- Asunto  -->
+                        <label for="topic" class="label">Asunto</label>
+                        <input type="text" name="topic" id="topic" class="form-input" placeholder="Contanos de que se trata..." required>
+                        <p class="input-error">El asunto no puede estar vacío.</p>
+
+                        <!-- Mensaje textarea -->
+                        <label for="message" class="label">Mensaje</label>
+                        <textarea name="" id="message" cols="30" rows="18" class="form-input" maxlength="1000" placeholder="Dejanos tu mensaje acá..." required></textarea>
+                        <p class="input-error">El mensaje no puede estar vacío.</p>
+
+                        <!-- captcha checkbox-->
+                        <div id="checkbox">
+                            <label for="checkbox-captcha" class="label">No soy un robot  
+                                <input type="checkbox" name="checkbox-captcha" id="checkbox-captcha" required>
+                            </label>
+                            
+                            <p class="input-error">Es necesario completar la casilla.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="form-error-message" id="form-error-message">
+                    <p><i class="fa-solid fa-circle-exclamation"></i> <b>Error:</b> Por favor completa el formulario correctamente.</p>
+                </div>
+                <div class="form-container-flex">
+                    <button type="submit" class="form-btn">Enviar</button>
+                    <button type="reset" class="form-btn">Borrar</button>
+                </div>
+                <p class="form-send-message" id="form-send-message">¡El formulario se envió exitosamente!</p>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="redes">
+            <p class="footer-title"><i class="fa-solid fa-angle-right fa-fw"></i>Seguinos en nuestras redes:</p>
+            <ul class="redes-icons">
+                <li class="sns facebook"><a href="#" class="fa-brands fa-facebook fa-fw"></a></li>
+                <li class="sns instagram"><a href="#" class="fa-brands fa-twitter fa-fw"></a></li>
+                <li class="sns twitter-x"><a href="#" class="fa-brands fa-instagram fa-fw"></a></li>
+                <li class="sns tiktok"><a href="#" class="fa-brands fa-tiktok fa-fw"></a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="footer-title"><i class="fa-solid fa-angle-right fa-fw"></i>Sitios de interés:</p>
+            <div class="links-sitios">
+                <p><a href="https://www.sanmartindelosandes.gov.ar/" target="_blank">Municipalidad de San Martín de los Andes</a></p>
+                <p><a href="http://neuquentur.gob.ar/es/" target="_blank">Neuquen Turismo</a></p>
+                <p><a href="http://www.pnlanin.com.ar/Trekking.php" target="_blank">Parque Nacional Lanin</a></p>
+                <p><a href="https://www.chapelco.com/index.php" target="_blank">Cerro Chapelco</a></p>
+            </div>
+        </div>
+        <div> 
+            <p class="footer-title"><i class="fa-solid fa-angle-right fa-fw"></i>Esta web es parte de un proyecto de</p>
+            <a href="https://agenciadeaprendizaje.bue.edu.ar/codo-a-codo/" target="_blank"><img src="./img/logo-CaC-removebg.png" alt="Codo a Codo" width="100px"></a>
+        </div>
+    </footer>
+    <!-- JS -->
+    <!-- <script src="./js/script-form.js"></script> -->
+</body>
+</html>

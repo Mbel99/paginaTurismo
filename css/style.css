@@ -451,15 +451,16 @@ textarea {
         padding: 0px;
         width: 100%;
     }
+
     .form-btn {
-        margin: 20px;
-    }
-} 
+    margin: 20px;
+    } 
+}
 
 @media screen and (max-width: 600px) {
-    .footer {
-        flex-direction: column;
-    }
+.footer {
+    flex-direction: column;
+}
 }
 
 /* telefono */

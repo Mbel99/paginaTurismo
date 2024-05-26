@@ -24,10 +24,15 @@ h1 {
     font-size: 2em;
 }
 
+.title-container h1 {
+    color: var(--main-white);
+    font-size: 10vw;
+    display: inline;
+}
+
 h2{
     text-align: center;
     margin: 20px;
-    font-size: 2.3vw;
 }
 /* Estilos para la barra de navegación */
 .header{
@@ -221,7 +226,13 @@ h3 a:hover {
     padding: 50px 10px;
     margin-top: 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.footer div {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer p {
@@ -252,7 +263,6 @@ h3 a:hover {
     border-radius: 50% ;
     background-color: var(--main-white);
     border: 2px solid var(--main-white);
-    box-shadow: inset 0 0 0 2px #e3e6e9;
 }
 
 .sns:hover {
@@ -269,7 +279,7 @@ h3 a:hover {
     color: var(--primary-color);
     position: relative;
     top: 1px;
-    left: 1px
+    left: 1px;
 }
 
 /* footer sitios */
@@ -331,12 +341,6 @@ h3 a:hover {
     box-shadow: 0 8px 16px 0 rgba(100, 200, 140,0.2);
 }
 
-#radio-container {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
-}
-
 #checkbox-captcha {
     margin-left: 5px;
 }
@@ -351,16 +355,19 @@ textarea {
     margin-bottom: 15px;
 }
 
-.input-error-activo {
-    display: block;
-} 
 
-#form-error-message {
+.form-error-message {
     width: 100%;
     text-align: center;
     background-color: #993223;
-    margin: 20px 2em;
+    margin: 5px 2em 20px;
     padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+.form-error-message * {
+    color: var(--main-white);
 }
 
 .form-btn {
@@ -380,14 +387,76 @@ textarea {
     transition: 0.5s;
 }
 
-/* validaciones formulario */
+.form-send-message {
+    text-align: center;
+    padding: 20px;
+    display: none;
+    color: var(--third-color);
+}
 
-.col input:valid {
+.activo {
+    display: block;
+} 
+
+/** validaciones formulario */
+
+.valido input {
     background-image: url(../img/check-icon.png);
     background-position: right center; 
     background-repeat: no-repeat;
     background-size: 30px;
 }
+
+.invalido input {
+    background-image: url(../img/invalid-icon.png);
+    background-position: right center; 
+    background-repeat: no-repeat;
+    background-size: 30px;
+    border: 2px solid #993223;
+}
+
+.invalido input:focus {
+    border: 2px solid #993223;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.invalido textarea {
+    background-image: url(../img/invalid-icon.png);
+    background-position: right bottom; 
+    background-repeat: no-repeat;
+    background-size: 30px;
+    border: 2px solid #993223;
+}
+
+.invalido textarea:focus {
+    border: 2px solid #993223;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.invalido label {
+    color: #993223;
+}
+
+
+/** Mediaqueries */
+/* tablet*/ 
+@media screen and (max-width: 800px) {
+    
+    
+    /* formulario */
+    .form-container-flex {
+        flex-direction: column;
+    }
+    .col {
+        padding: 0px;
+        width: 100%;
+    }
+}
+
+/* telefono */
+@media screen and (max-width: 480px) {
+}
+
 
 /*ESTILOS PARA EXCURSIONES*/
 
@@ -443,7 +512,7 @@ textarea {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
-       
+
 }
 .card-header{
     height: 200px;
@@ -505,8 +574,12 @@ textarea {
         display: flex;
         flex-direction: column;
     }
-}
 
-/* telefono */
-@media screen and (max-width: 480px) {
+    .card-description { 
+        flex-grow: 1;
+    }
+}
+    .card-description { 
+        flex-grow: 1;
+    }
 }

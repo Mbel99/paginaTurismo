@@ -17,10 +17,14 @@
 
 body{
     background-color: var(--main-white);
-    max-width: 100%;
 }
 
 h1 {
+    color: var(--main-white);
+    font-size: 2em;
+}
+
+.title-container h1 {
     color: var(--main-white);
     font-size: 10vw;
     display: inline;

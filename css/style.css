@@ -34,14 +34,15 @@ h2{
     text-align: center;
     margin: 20px;
 }
+
 /* Estilos para la barra de navegación */
 .header{
-    background-color:var(--third-color);
+    background-color:var(--primary-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    padding: 5px 10%;
+    padding: 5px 5%;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -55,13 +56,16 @@ h2{
 
 .nav-links{
     list-style: none;
-    text-align: center; 
+    text-align: center;
+    padding: 0;
+    margin: 0; 
+    display: flex;
 }
 
 .nav-links li{
     display:inline-block;
     padding: 0 60px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .nav-links li:hover{
@@ -69,27 +73,74 @@ h2{
 }
 
 .nav-links a{
-    font-size: 600;
+    font-size: 16px;
     color: #fff;
     display: block;
     text-decoration: none;
 }
 
 .nav-links a:hover{
-    color: #000;
+    color: var(--secondary-color);
 }
 
-/* Estilos para el slider con imágenes */
-.titulo{
-    color: #000;
+/*Estilos menu desplegable*/
+.menu-toggle {
+    display: none; 
 }
-.texto{
+.menu-icon {
+    display: none; 
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px; 
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #333; 
+    }
+
+    .menu-icon {
+        display: block; 
+    }
+
+    .menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+    }
+}
+
+
+/*Estilos Slider*/
+.titulo {
+    color: #000;
+    text-align: center; 
+    padding: 0 10px;
+    position: relative;
+}
+
+.texto {
     position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
     text-align: center;
-    padding: 0 300px;
+    padding: 0 10px;
     top: 250px;
 }
-.slider-frame{
+
+.bienv {
+    font-size: 4vw; 
+    color: var(--main-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.slider-frame {
     position: relative;
     max-width: 100%;
     width: 100%;
@@ -112,6 +163,8 @@ h2{
 
 .slider-frame img{
     max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 @keyframes slide{
@@ -126,6 +179,132 @@ h2{
 
     75% {margin-left:-300%;}
     95% {margin-left:-300%;}
+}
+
+@media (max-width: 768px) {
+    .titulo,
+    .texto {
+        padding: 0 20px;
+    }
+
+    .bienv {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo,
+    .texto {
+        padding: 0;
+    }
+
+    .bienv {
+        font-size: 7vw;
+    }
+}
+
+/* Texto de Introducción*/
+.slogan {
+    margin: 30px 0;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.slogan .text-p {
+    margin: 20px 0 5px 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .slogan .text-p {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slogan .text-p {
+        padding: 0; 
+    }
+}
+
+/*Preview de Excursiones*/
+.galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.container{
+    margin-top: 15px;
+    margin-left: 15px;
+    flex: 1 1 calc(33.333% - 30px);
+    max-width: 250px;
+    max-height: 350px ;
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.imagen{
+    width: 250px;
+    height: 350px; 
+    object-fit: cover;
+}
+
+.texto{
+    font-size: 2vw;
+    font-weight: bold;
+    color: white;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    transition: .5s ease;  
+}
+
+.container:hover .overlay{
+    transform: scale(1.0);
+    cursor: pointer;
+}
+
+@media (max-width: 480px){
+    .container{
+        flex:  1 1 calc(100% - 30px);
+    }
+    .texto{
+        font-size: 4vw;
+    }
+}
+
+/*Iframe Mapa*/
+.mapa{
+    margin-top: 10px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+iframe{
+    width: 80%;
+    height: 500px;
 }
 
 /** ESTILOS PARA ALOJAMIENTO */

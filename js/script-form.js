@@ -104,3 +104,4 @@ formulario.addEventListener('submit', (e) => {
 		document.getElementById('form-error-message').classList.add('activo');
 	}
 });
+

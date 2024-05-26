@@ -1,3 +1,4 @@
+
 // get elements from DOM
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input, textarea');
@@ -104,4 +105,3 @@ formulario.addEventListener('submit', (e) => {
 		document.getElementById('form-error-message').classList.add('activo');
 	}
 });
-

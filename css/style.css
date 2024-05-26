@@ -505,25 +505,8 @@ textarea {
         display: flex;
         flex-direction: column;
     }
-
-    .card-description { 
-        flex-grow: 1;
-    }
 }
 
-
-
-
-
-/* sacar las arrows del imput number */
-/* input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+/* telefono */
+@media screen and (max-width: 480px) {
 }
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-} */

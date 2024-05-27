@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d225780009.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
     <title>Visita San Martín de los Andes</title>
 </head>
@@ -18,16 +19,19 @@
         <div class="logo"> 
             <img src="img/mountain_11187542.png" alt="Logo de la página">
         </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./excursiones.html">¿Qué visitar?</a></li>
-                <li><a href="./alojamiento.html">¿Dónde alojarse?</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-            </ul>
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu'></i>
+        </label>
+        <nav class="navbar">
+            <a href="index.html" style="--i:0;">Inicio</a>
+            <a href="excursiones.html" style="--i:1;" target="_blank">¿Qué visitar?</a>
+            <a href="alojamiento.html" style="--i:2;" target="_blank">¿Dónde alojarse?</a>
+            <a href="contacto.html" style="--i:3;" target="_blank">Contacto</a>
         </nav>
     </header>
     <main>
+        <!--Slider con imagenes-->
         <div class="slider-frame">
             <ul>
                 <li><img src="img/slider 1.jpg" alt=""></li>
@@ -36,29 +40,56 @@
                 <li><img src="img/slider 4.jpg" alt=""></li>
             </ul>
             <div class="texto">
-                <h1>¡Bienvenido a San Martín de los Andes!</h1>
+                <h1 class="bienv">¡Bienvenido a San Martín de los Andes!</h1>
             </div>
         </div>
-
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis eveniet recusandae provident cum tempora eligendi tenetur excepturi adipisci cumque architecto explicabo, enim id deserunt culpa beatae possimus odio? Minima perspiciatis saepe temporibus sapiente maxime sint quia obcaecati quos ipsam quas.
-        </p>
-        
-        <!-- **preview de "excurciones" -->
-            <!-- imagenes de los lugares más caracteristicos
-            -volcan LANIN
-            -los 7 lagos
-            -quila quina
-            -etc. -->
-
-
-        <!-- ** preview hospedaje-->
-
+        <!--Introduccion-->
         <section>
-            <h2>Mapa de la ciudad</h2>
-            <p>Acá va un iframe del mapa</p>
+            <div class="slogan">
+                <h3 class="frase"><i>Donde los sueños se convierten en paisajes</i></h3>
+                <p class="text-p">Sumérgete en la belleza natural y la serenidad de uno de los destinos más cautivadores de la Patagonia argentina.</p>
+                <p class="text-p">Siuado en Neuquén, junto al lago Lácar y rodeado de la majestuosa cordillera de los Andes, este paraíso montañoso ofrece paisajes impresionantes, actividades al aire libre y un encantador ambiente alpino.
+                </p>
+            </div>
+        </section>  
+        <!--Preview Excursiones-->
+        <h2>¿Cuál será tu próxima excursión?</h2>
+        <section class="galeria">  
+            <div class="container">
+                <img class="imagen" src="img/7 lagos.jpg" alt="">
+                <div class="overlay">
+                    <a href="excursiones.html#lago" target="_blank"><div class="texto">Ruta de los Siete Lagos</div></a>
+                </div>
+            </div>
+            <div class="container">
+                <img class="imagen" src="img/volcan lanin.png" alt="">
+                <div class="overlay">
+                    <a href="excursiones.html#volcan" target="_blank"><div class="texto">Volcán Lanín</div></a>
+                </div>
+            </div>
+            <div class="container">
+                <img class="imagen" src="img/cascada chachin.jpg" alt="">
+                <div class="overlay">
+                    <a href="excursiones.html#cascada" target=""><div class="texto">Cascada Chachín</div></a>
+                </div>
+            </div>
+            <div class="container">
+                <img class="imagen" src="img/muelle-de-quila-quina.jpg" alt="">
+                <div class="overlay">
+                    <a href="excursiones.html#playa" target="_blank"><div class="texto">Playa Quila Quina</div></a>
+                </div>
+            </div>
+        </section> 
+        <!--Iframe Mapa-->
+        <section>
+            
+            <div class="mapa">
+                <h2>Mapa de la ciudad</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48802.24870107764!2d-71.299621!3d-40.139153!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96110e743605d0c7%3A0x71c43ffb1c66bc3a!2sSan%20Mart%C3%ADn%20de%20los%20Andes%2C%20Neuqu%C3%A9n!5e0!3m2!1ses!2sar!4v1716740203461!5m2!1ses!2sar" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </section>
     </main>
+    <!--Footer-->
     <footer class="footer">
         <div class="redes">
             <p class="footer-title"><i class="fa-solid fa-angle-right fa-fw" style="color: #e0dedf;"></i>Seguinos en nuestras redes:</p>

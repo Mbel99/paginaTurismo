@@ -35,62 +35,138 @@ h2{
     text-align: center;
     margin: 20px;
 }
-/* Estilos para la barra de navegación */
+
+/*NAVBAR*/
 .header{
-    background-color:var(--third-color);
+    background-color:var(--primary-color);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-    padding: 5px 10%;
-    position: sticky;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    z-index: 9999;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        padding: 5px 5%;
+        position: sticky;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: 9999;     
 }
 
 .logo img{
     height: 60px;
 }
-
-.nav-links{
-    list-style: none;
-    text-align: center; 
+.header::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #254c5d;
+   z-index: -1;
 }
 
-.nav-links li{
-    display:inline-block;
-    padding: 0 60px;
-    font-size: 18px;
+.navbar a {
+    font-size: 1.15rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
 }
 
-.nav-links li:hover{
+.navbar {
     transform: scale(1.1);
 }
 
-.nav-links a{
-    font-size: 600;
-    color: #fff;
-    display: block;
-    text-decoration: none;
+.navbar a:hover {
+    color: var(--secondary-color);
 }
 
-.nav-links a:hover{
-    color: #000;
-}
-
-/* Estilos para el slider con imágenes */
-.titulo{
-    color: #000;
-}
-.texto{
+.icons {
     position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
+    }
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: #254c5d;
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar {
+        height: 12rem;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: .3 ease;
+    }
+
+    #check:checked~.navbar a {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(.15s * var(--i));
+    }
+}
+
+#check {
+    display: none;
+}
+
+/*Estilos Slider*/
+.titulo {
+    color: #000;
+    text-align: center; 
+    padding: 0 10px;
+    position: relative;
+}
+
+.texto {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
     text-align: center;
-    padding: 0 300px;
+    padding: 0 10px;
     top: 250px;
 }
-.slider-frame{
+
+.bienv {
+    font-size: 4vw; 
+    color: var(--main-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.slider-frame {
     position: relative;
     max-width: 100%;
     width: 100%;
@@ -113,6 +189,8 @@ h2{
 
 .slider-frame img{
     max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 @keyframes slide{
@@ -127,6 +205,132 @@ h2{
 
     75% {margin-left:-300%;}
     95% {margin-left:-300%;}
+}
+
+@media (max-width: 768px) {
+    .titulo,
+    .texto {
+        padding: 0 20px;
+    }
+
+    .bienv {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo,
+    .texto {
+        padding: 0;
+    }
+
+    .bienv {
+        font-size: 7vw;
+    }
+}
+
+/* Texto de Introducción*/
+.slogan {
+    margin: 30px 0;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.slogan .text-p {
+    margin: 20px 0 5px 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .slogan .text-p {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slogan .text-p {
+        padding: 0; 
+    }
+}
+
+/*Preview de Excursiones*/
+.galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.container{
+    margin-top: 15px;
+    margin-left: 15px;
+    flex: 1 1 calc(33.333% - 30px);
+    max-width: 250px;
+    max-height: 350px ;
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.imagen{
+    width: 250px;
+    height: 350px; 
+    object-fit: cover;
+}
+
+.texto{
+    font-size: 2vw;
+    font-weight: bold;
+    color: white;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    transition: .5s ease;  
+}
+
+.container:hover .overlay{
+    transform: scale(1.0);
+    cursor: pointer;
+}
+
+@media (max-width: 480px){
+    .container{
+        flex:  1 1 calc(100% - 30px);
+    }
+    .texto{
+        font-size: 4vw;
+    }
+}
+
+/*Iframe Mapa*/
+.mapa{
+    margin-top: 10px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+iframe{
+    width: 80%;
+    height: 500px;
 }
 
 /** ESTILOS PARA ALOJAMIENTO */

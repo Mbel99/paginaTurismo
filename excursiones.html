@@ -8,22 +8,25 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/d225780009.js" crossorigin="anonymous"></script>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="css/style.css">
         <title>Excursiones SMA</title>
     </head>
 <body>
    <!-- Barra de navegación -->
    <header class="header">
-       <div class="logo"> 
+    <div class="logo"> 
         <img src="img/mountain_11187542.png" alt="Logo de la página">
     </div>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="./index.html">Inicio</a></li>
-            <li><a href="./excursiones.html">¿Qué visitar?</a></li>
-            <li><a href="./alojamiento.html">¿Dónde hospedarse?</a></li>
-            <li><a href="./contacto.html">Contacto</a></li>
-        </ul>
+    <input type="checkbox" id="check">
+    <label for="check" class="icons">
+        <i class='bx bx-menu'></i>
+    </label>
+    <nav class="navbar">
+        <a href="index.html" style="--i:0;">Inicio</a>
+        <a href="excursiones.html" style="--i:1;" target="_blank">¿Qué visitar?</a>
+        <a href="alojamiento.html" style="--i:2;" target="_blank">¿Dónde alojarse?</a>
+        <a href="contacto.html" style="--i:3;" target="_blank">Contacto</a>
     </nav>
 </header>
 <main>

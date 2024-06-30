@@ -115,6 +115,9 @@ formulario.addEventListener('reset',(e) => {
 		icono.classList.remove('valido');
 		}
 	)
+	document.querySelectorAll(`.input-error`).forEach((parrafo) => {
+		parrafo.classList.remove('activo')}
+	);
 	document.querySelectorAll('.invalido').forEach((icono) => {
 		icono.classList.remove('invalido');
 		}

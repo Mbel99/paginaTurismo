@@ -85,9 +85,12 @@ h2{
     position: absolute;
     right: 5%;
     font-size: 2.8rem;
-    color: white;
     cursor: pointer;
     display: none;
+}
+
+.icons i {
+    color: var(--main-white) ;
 }
 
 @media (max-width: 992px) {

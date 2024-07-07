@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo Electrónico</th>
+        <th>País</th>
+        <th>Teléfono</th>
+        <th>Asunto</th>
+        <th>Mensaje</th>
+        <th>Fecha</th>
+        <th>Acciones</th>
+    </thead>
+    <tbody>
+    
+    </tbody>
+

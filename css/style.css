@@ -825,7 +825,7 @@ textarea {
   }
   
   #list-table-contactos td {
-    text-align: center; /* Alineación ajustada */
+    text-align: center;
   }
   
   #list-table-contactos tr:hover {
@@ -849,11 +849,7 @@ textarea {
     background: #254c5d ;
     color: #fff;
   }
-  
- /* #list-table-contactos tr:nth-child(2) td:first-child {
-    box-shadow: 0 -2.7em 0 -6px #1A8CFF, -6px -2.7em 0 -6px #254c5d ;
-  }*/
-  
+    
   /* Estilos para botones */
   .btn-cac {
     color: white;
@@ -869,11 +865,11 @@ textarea {
   }
   
   .btn-edit {
-    background-color: #4CAF50; /* Verde */
+    background-color: #4CAF50;
   }
   
   .btn-delete {
-    background-color: #f44336; /* Rojo */
+    background-color: #f44336;
   }
 
 

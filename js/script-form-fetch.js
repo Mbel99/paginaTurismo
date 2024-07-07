@@ -17,6 +17,7 @@ async function fetchData(url, method, data = null) {
       },
       body: data ? JSON.stringify(data) : null,  // Si hay datos, los convierte a JSON y los incluye en el cuerpo
   };
+  console.log(`fetchData: ${method} ${url}`, data); // Agregamos un log aquí
   try {
     const response = await fetch(url, options);  // Realiza la petición fetch
     if (!response.ok) {
@@ -123,16 +124,21 @@ async function showContactos() {
  */
 function deleteContacto(id){
   Swal.fire({
-      title: "Está seguro de eliminar el contacto?",
+      title: "¿Está seguro de eliminar el contacto?",
       showCancelButton: true,
       confirmButtonText: "Eliminar",
   }).then(async (result) => {
       if (result.isConfirmed) {
+        console.log(`deleteContacto: ${id}`); // Agregamos un log aquí
         let response = await fetchData(`${BASEURL}/api/contactos/${id}`, 'DELETE');
+        if(response) {
         showContactos();
         Swal.fire(response.message, "", "success");
+      } else {
+        Swal.fire("Error al eliminar el contacto", "", "error");
       }
-  });
+    }
+    });
 }
 
 /**
@@ -169,4 +175,3 @@ document.addEventListener('DOMContentLoaded', function() {
   btnSaveContacto.addEventListener('click', saveContacto);
   showContactos();
 });
-

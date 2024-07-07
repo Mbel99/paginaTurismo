@@ -162,8 +162,7 @@ async function updateContacto(id){
   mensaje.value = response.mensaje;
 }
 
-// Escuchar el evento 'DOMContentLoaded' que se dispara cuando el 
-// contenido del DOM ha sido completamente cargado y parseado.
+// Escuchar el evento 'DOMContentLoaded' que se dispara cuando el contenido del DOM ha sido completamente cargado y parseado.
 document.addEventListener('DOMContentLoaded', function() {
   const btnSaveContacto = document.querySelector('.form-btn[type="submit"]');
   // ASOCIAR UNA FUNCION AL EVENTO CLICK DEL BOTON

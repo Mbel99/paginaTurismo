@@ -812,3 +812,88 @@ textarea {
         flex-grow: 1;
     }
 }
+
+/*TABLA DE DATOS*/
+#contact-list-container {
+    overflow-x: auto;
+    margin-top: 20px;
+  }
+  
+  #list-table-contactos {
+    width: 100%;
+    font-size: .85em;
+    border: 1px solid rgba(197, 199, 194, 0.5);
+    color: #666;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 900px;
+  }
+  
+  #list-table-contactos td, #list-table-contactos th {
+    padding: .8em;
+    border-bottom: 1px solid rgba(191, 192, 190, 0.5);
+  }
+  
+  #list-table-contactos th {
+    background: #254c5d ;
+    color: #fff;
+    font-weight: normal;
+    text-align: center;
+  }
+  
+  #list-table-contactos td {
+    text-align: center;
+  }
+  
+  #list-table-contactos tr:hover {
+    background: rgba(208, 209, 208, 0.228);
+  }
+  
+  #list-table-contactos tr td:nth-child(2n) {
+    background: rgba(208, 209, 208, 0.228);
+  }
+  
+  #list-table-contactos td:first-child,
+  #list-table-contactos th:first-child {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    min-width: 8em;
+  }
+  
+  #list-table-contactos tr:hover td:first-child {
+    background: #254c5d ;
+    color: #fff;
+  }
+    
+  /* Estilos para botones */
+  .btn-cac {
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .btn-edit {
+    background-color: #4CAF50;
+  }
+  
+  .btn-delete {
+    background-color: #f44336;
+  }
+
+
+  /*Responsive*/
+@media(max-width: 500px){
+    .table thead{
+        display: none;
+    }
+}

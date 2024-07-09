@@ -23,9 +23,9 @@
         </label>
         <nav class="navbar">
             <a href="index.html" style="--i:0;">Inicio</a>
-            <a href="excursiones.html" style="--i:1;" target="_blank">¿Qué visitar?</a>
-            <a href="alojamiento.html" style="--i:2;" target="_blank">¿Dónde alojarse?</a>
-            <a href="contacto.html" style="--i:3;" target="_blank">Contacto</a>
+            <a href="excursiones.html" style="--i:1;">¿Qué visitar?</a>
+            <a href="alojamiento.html" style="--i:2;">¿Dónde alojarse?</a>
+            <a href="contacto.html" style="--i:3;">Contacto</a>
         </nav>
     </header>
     <main>
@@ -44,14 +44,14 @@
                         <!-- Nombre -->
                         <div class="form-grupo" id="grupo-name">
                             <label for="name" class="label">Nombre</label>
-                            <input type="text" name="name" id="name" class="form-input" minlength="2" required>
+                            <input type="text" name="name" id="name" class="form-input" minlength="2">
                             <p class="input-error">El nombre solo puede contener letras y espacios. El mínimo de caractéres es 2.</p>
                         </div>
             
                         <!-- Apellido -->
                         <div class="form-grupo" id="grupo-surname">
                             <label for="surname" class="label">Apellido</label>
-                            <input type="text" name="surname" id="surname" class="form-input" minlength="2" required>
+                            <input type="text" name="surname" id="surname" class="form-input" minlength="2">
                             <p class="input-error">El apellido solo puede contener letras y espacios. El mínimo de caractéres es 2.</p>
                         </div>
             
@@ -61,30 +61,31 @@
                             <input type="email" name="email" id="email" placeholder="Correo@correo.com" required class="form-input">
                             <p class="input-error">El formato del correo no es correcto. El correo solo puede contener letras, números, puntos, guiones y guión bajo.</p>
                         </div>
-            
+                      
                         <!-- Confirmar email -->
                         <div class="form-grupo" id="grupo-emailcheck">
                             <label for="emailcheck" class="label">Confirmar correo Electrónico</label>
-                            <input type="email" name="emailcheck" id="emailcheck" placeholder="Correo@correo.com" required class="form-input">
+                            <input type="email" name="emailcheck" id="emailcheck" placeholder="Correo@correo.com" class="form-input">
                             <p class="input-error">Ambas direcciones de correo electrónico deben ser iguales.</p>
                         </div>
             
                         <!-- País -->
                         <div class="form-grupo" id="grupo-country">
                             <label for="country" class="label">País</label>
-                            <select name="country" id="country" class="form-input" required>
-                                <option value="Argentina">Argentina</option>
-                                <option value="Chile">Chile</option>
-                                <option value="Uruguay">Uruguay</option>
-                                <option value="Brasil">Brasil</option>
-                                <option value="Otro">Otro</option>
+                            <select name="country" id="country" class="form-input">
+                                <option value="">Seleccione su país</option>
+                                <option value="1">Argentina</option>
+                                <option value="2">Chile</option>
+                                <option value="3">Uruguay</option>
+                                <option value="4">Brasil</option>
+                                <option value="5">Otro</option>
                             </select>
                         </div>
             
                         <!-- Telefono -->
                         <div class="form-grupo" id="grupo-phone">
-                            <label for="phone" class="label">Telefono</label>
-                            <input type="tel" name="phone" id="phone" placeholder="1122334455" class="form-input" minlength="10" required>
+                            <label for="phone" class="label">Telefono</label>===
+                            <input type="tel" name="phone" id="phone" placeholder="1122334455" class="form-input">
                             <p class="input-error">El telefono solo puede contener números y entre 10 y 14 dígitos</p>
                         </div>
                     </div>
@@ -92,21 +93,21 @@
                         <!-- Asunto -->
                         <div class="form-grupo" id="grupo-topic">
                             <label for="topic" class="label">Asunto</label>
-                            <input type="text" name="topic" id="topic" class="form-input" placeholder="Contanos de que se trata..." required>
+                            <input type="text" name="topic" id="topic" class="form-input" placeholder="Contanos de que se trata...">
                             <p class="input-error">El asunto no puede estar vacío.</p>
                         </div>
             
                         <!-- Mensaje -->
                         <div class="form-grupo" id="grupo-message">
                             <label for="message" class="label">Mensaje</label>
-                            <textarea name="message" id="message" cols="30" rows="18" class="form-input" maxlength="1000" placeholder="Dejanos tu mensaje acá..." required></textarea>
+                            <textarea name="message" id="message" cols="30" rows="18" class="form-input" maxlength="1000" placeholder="Dejanos tu mensaje acá..."></textarea>
                             <p class="input-error">El mensaje no puede estar vacío.</p>
                         </div>
             
                         <!-- Captcha -->
                         <div class="form-grupo" id="grupo-checkbox">
-                            <label for="checkbox-captcha" class="label">No soy un robot
-                                <input type="checkbox" name="checkbox-captcha" id="checkbox-captcha" required>
+                            <label for="checkbox-captcha" class="label">No soy un robot  
+                                <input type="checkbox" name="checkbox-captcha" id="checkbox-captcha">
                             </label>
                         </div>
                     </div>

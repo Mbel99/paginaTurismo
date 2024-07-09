@@ -16,7 +16,9 @@ const campos = {
 	name: false,
 	surname: false,
 	email: false,
-	phone: false
+	phone: false,
+	topic: false,
+	message: false
 }
 
 // Add events to all inputs
@@ -90,8 +92,9 @@ formulario.addEventListener('submit', (e) => {
 
 	const captcha = document.getElementById('checkbox-captcha');
 
-	if (campos.name && campos.surname && campos.email && campos.phone && captcha.checked) {
+	if (campos.name && campos.surname && campos.email && campos.phone && campos.topic && campos.message && 	captcha.checked) {
 		formulario.reset();
+		document.getElementById('form-error-message').classList.remove('activo');
 		document.getElementById('form-send-message').classList.add('activo');
 		setTimeout( () => {
 			document.getElementById('form-send-message').classList.remove('activo');
@@ -104,4 +107,19 @@ formulario.addEventListener('submit', (e) => {
 	} else {
 		document.getElementById('form-error-message').classList.add('activo');
 	}
+});
+
+//limpiar estilos de validación al usar el boton "borrar"
+formulario.addEventListener('reset',(e) => {
+	document.querySelectorAll('.valido').forEach((icono) => {
+		icono.classList.remove('valido');
+		}
+	)
+	document.querySelectorAll(`.input-error`).forEach((parrafo) => {
+		parrafo.classList.remove('activo')}
+	);
+	document.querySelectorAll('.invalido').forEach((icono) => {
+		icono.classList.remove('invalido');
+		}
+	)
 });

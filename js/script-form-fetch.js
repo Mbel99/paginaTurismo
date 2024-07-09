@@ -49,7 +49,7 @@ async function saveContacto() {
   // VALIDACIÓN DE FORMULARIO
   if (!nombre || !apellido || !correoElectronico || !pais || !telefono || !asunto || !mensaje) {
     Swal.fire({
-        title: 'Error!',
+        title: '¡Error!',
         text: 'Por favor completa todos los campos.',
         icon: 'error',
         confirmButtonText: 'Cerrar'
@@ -81,7 +81,7 @@ async function saveContacto() {
   const formContacto = document.querySelector('#formulario');
   formContacto.reset();
   Swal.fire({
-    title: 'Exito!',
+    title: '¡Exito!',
     text: result.message,
     icon: 'success',
     confirmButtonText: 'Cerrar'
@@ -124,7 +124,7 @@ async function showContactos() {
  */
 function deleteContacto(id){
   Swal.fire({
-      title: "¿Está seguro de eliminar el contacto?",
+      title: "¿Está seguro de eliminar la consulta?",
       showCancelButton: true,
       confirmButtonText: "Eliminar",
   }).then(async (result) => {
@@ -135,7 +135,7 @@ function deleteContacto(id){
         showContactos();
         Swal.fire(response.message, "", "success");
       } else {
-        Swal.fire("Error al eliminar el contacto", "", "error");
+        Swal.fire("Error al eliminar la consulta", "", "error");
       }
     }
     });

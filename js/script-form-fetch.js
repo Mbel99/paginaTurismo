@@ -10,24 +10,24 @@ const BASEURL='https://mbelengz.pythonanywhere.com/'
  * @returns {Promise<Object>} - Una promesa que resuelve con la respuesta en formato JSON.
  */
 async function fetchData(url, method, data = null) {
-    const options = {
-        method: method,
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: data ? JSON.stringify(data) : null,
-    };
-    console.log(`fetchData: ${method} ${url}`, data);
-    try {
-        const response = await fetch(url, options);
-        if (!response.ok) {
-            throw new Error(`Error: ${response.statusText}`);
-        }
-        return await response.json();
-    } catch (error) {
-        console.error('Fetch error:', error);
-        alert('An error occurred while fetching data. Please try again.');
+  const options = {
+      method: method,
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: data ? JSON.stringify(data) : null,  // Si hay datos, los convierte a JSON y los incluye en el cuerpo
+  };
+  console.log(`fetchData: ${method} ${url}`, data); // Agregamos un log aquí
+  try {
+    const response = await fetch(url, options);  // Realiza la petición fetch
+    if (!response.ok) {
+      throw new Error(`Error: ${response.statusText}`);
     }
+    return await response.json();  // Devuelve la respuesta en formato JSON
+  } catch (error) {
+    console.error('Fetch error:', error);
+    alert('An error occurred while fetching data. Please try again.');
+  }
 }
 
 /**
@@ -36,55 +36,58 @@ async function fetchData(url, method, data = null) {
  * @returns 
  */
 async function saveContacto() {
-    const idContacto = document.querySelector('#id-contacto').value;
-    const nombre = document.querySelector('#name').value;
-    const apellido = document.querySelector('#surname').value;
-    const correoElectronico = document.querySelector('#email').value;
-    const pais = document.querySelector('#country').value;
-    const telefono = document.querySelector('#phone').value;
-    const asunto = document.querySelector('#topic').value;
-    const mensaje = document.querySelector('#message').value;
-    const fecha = new Date().toISOString().split('T')[0];
+  const idContacto = document.querySelector('#id-contacto').value;
+  const nombre = document.querySelector('#name').value;
+  const apellido = document.querySelector('#surname').value;
+  const correoElectronico = document.querySelector('#email').value;
+  const pais = document.querySelector('#country').value;
+  const telefono = document.querySelector('#phone').value;
+  const asunto = document.querySelector('#topic').value;
+  const mensaje = document.querySelector('#message').value;
+  const fecha = new Date().toISOString().split('T')[0]; // Obtiene la fecha actual en formato YYYY-MM-DD
 
-    if (!nombre || !apellido || !correoElectronico || !pais || !telefono || !asunto || !mensaje) {
-        Swal.fire({
-            title: '¡Error!',
-            text: 'Por favor completa todos los campos.',
-            icon: 'error',
-            confirmButtonText: 'Cerrar'
-        });
-        return;
-    }
-
-    const contactoData = {
-        nombre: nombre,
-        apellido: apellido,
-        correo_electronico: correoElectronico,
-        pais: pais,
-        telefono: telefono,
-        asunto: asunto,
-        mensaje: mensaje,
-        fecha: fecha
-    };
-
-    let result = null;
-    if (idContacto !== "") {
-        result = await fetchData(`${BASEURL}/api/contactos/${idContacto}`, 'PUT', contactoData);
-    } else {
-        result = await fetchData(`${BASEURL}/api/contactos/`, 'POST', contactoData);
-    }
-
-    const formContacto = document.querySelector('#formulario');
-    formContacto.reset();
+  // VALIDACIÓN DE FORMULARIO
+  if (!nombre || !apellido || !correoElectronico || !pais || !telefono || !asunto || !mensaje) {
     Swal.fire({
-        title: '¡Éxito!',
-        text: result.message,
-        icon: 'success',
+        title: '¡Error!',
+        text: 'Por favor completa todos los campos.',
+        icon: 'error',
         confirmButtonText: 'Cerrar'
     });
-    showContactos();  // Una función para mostrar los contactos actualizados
-}
+    return;
+  }
 
+  // Crea un objeto con los datos del contacto
+  const contactoData = {
+      nombre: nombre,
+      apellido: apellido,
+      correo_electronico: correoElectronico,
+      pais: pais,
+      telefono: telefono,
+      asunto: asunto,
+      mensaje: mensaje,
+      fecha: fecha
+  };
+
+  let result = null;
+  // Si hay un idContacto, realiza una petición PUT para actualizar el contacto existente
+  if(idContacto !== ""){
+    result = await fetchData(`${BASEURL}/api/contactos/${idContacto}`, 'PUT', contactoData);
+  } else {
+    // Si no hay idContacto, realiza una petición POST para crear un nuevo contacto
+    result = await fetchData(`${BASEURL}/api/contactos/`, 'POST', contactoData);
+  }
+  
+  const formContacto = document.querySelector('#formulario');
+  formContacto.reset();
+  Swal.fire({
+    title: '¡Exito!',
+    text: result.message,
+    icon: 'success',
+    confirmButtonText: 'Cerrar'
+  });
+  showContactos();
+}
 
 /**
  * Función que permite crear un elemento <tr> para la tabla de contactos
